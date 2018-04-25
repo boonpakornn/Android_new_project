@@ -56,11 +56,7 @@
 
             <EditText
                 android:id="@+id/username"
-<<<<<<< HEAD
                 android:layout_width="120dp"
-=======
-                android:layout_width="wrap_content"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -95,11 +91,7 @@
 
             <EditText
                 android:id="@+id/password"
-<<<<<<< HEAD
                 android:layout_width="120dp"
-=======
-                android:layout_width="0dp"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -133,13 +125,8 @@
 
             <EditText
                 android:id="@+id/email"
-<<<<<<< HEAD
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-=======
-                android:layout_width="wrap_content"
-                android:layout_height="46dp"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/Email_input"
@@ -173,11 +160,7 @@
 
             <EditText
                 android:id="@+id/firstname"
-<<<<<<< HEAD
                 android:layout_width="120dp"
-=======
-                android:layout_width="0dp"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -213,11 +196,7 @@
 
             <EditText
                 android:id="@+id/lastname"
-<<<<<<< HEAD
                 android:layout_width="120dp"
-=======
-                android:layout_width="wrap_content"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -253,11 +232,7 @@
 
             <EditText
                 android:id="@+id/school"
-<<<<<<< HEAD
                 android:layout_width="120dp"
-=======
-                android:layout_width="wrap_content"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -292,13 +267,8 @@
 
             <EditText
                 android:id="@+id/age"
-<<<<<<< HEAD
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-=======
-                android:layout_width="wrap_content"
-                android:layout_height="46dp"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/Age_input"
@@ -334,13 +304,8 @@
 
             <EditText
                 android:id="@+id/phone"
-<<<<<<< HEAD
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-=======
-                android:layout_width="wrap_content"
-                android:layout_height="47dp"
->>>>>>> parent of ab0cbc1... Merge branch 'Nutty' of https://github.com/wakawaka2537/Project_Android_Y3_2 into Nutty
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/Phone_input"
