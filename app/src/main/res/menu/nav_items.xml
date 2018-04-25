@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_news"
+        android:icon="@drawable/folded_newspaper"
+        android:title="@string/nav_news" />
+    <item
+        android:id="@+id/nav_project"
+        android:icon="@drawable/trophy"
+        android:title="@string/nav_project" />
+    <item
+        android:id="@+id/name_event"
+        android:icon="@drawable/event"
+        android:title="@string/nav_events" />
+</menu>

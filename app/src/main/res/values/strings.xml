@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Project_Application</string>
+    <string name="textview">TextView</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Username_Input">username</string>
+    <string name="Password_Input">Password</string>
+    <string name="Firstname_Input">Firstname</string>
+    <string name="Lastname_Input">Lastname</string>
+    <string name="School_input">School</string>
+    <string name="Age_input">Age</string>
+    <string name="Email_input">Email Address</string>
+    <string name="Phone_input">Phone number</string>
+    <string name="input_following_scores">Input following scores</string>
+    <string name="gpax">GPAX</string>
+    <string name="thai">O-NET Thai</string>
+    <string name="social">O-NET Social</string>
+    <string name="math">O-NET Math</string>
+    <string name="science">O-NET Science</string>
+    <string name="english">O-NET English</string>
+    <string name="gat">GAT</string>
+    <string name="pat1">PAT 1</string>
+    <string name="pat_2">PAT 2</string>
+    <string name="calculate">Calculate</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="Facebook_sign_in">Sign in with Facebook</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="register_account">Register an account</string>
+    <string name="registra">Registeration scucsess</string>
+    <string name="nav_news">News</string>
+    <string name="nav_project">Projects</string>
+    <string name="nav_events">Events</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
