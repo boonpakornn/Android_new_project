@@ -12,6 +12,7 @@ public class Mainfeature extends AppCompatActivity {
 
     ImageButton newsAndEventsButton;    //Button to News & Projects from homepage
     ImageButton admissionCalculator;    //Button to Admission Calculator from homepage
+    ImageButton setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class Mainfeature extends AppCompatActivity {
 
         newsAndEventsButton = findViewById(R.id.news_and_events_button);
         admissionCalculator = findViewById(R.id.admission_cal_button);
+        setting = findViewById(R.id.settings_button);
 
         newsAndEventsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,12 @@ public class Mainfeature extends AppCompatActivity {
                 startActivity(new Intent(Mainfeature.this, AdmissionCalculator.class));
             }
         });
-    }
 
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Mainfeature.this, SettingActivity.class));
+            }
+        });
+    }
 }
