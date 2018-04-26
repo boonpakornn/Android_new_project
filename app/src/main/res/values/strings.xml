@@ -52,4 +52,5 @@
     <string name="noti">Notifications</string>
     <string name="account">Account</string>
     <string name="pref">Preference</string>
+    <string name="action_sign_out">Sign out</string>
 </resources>

@@ -5,16 +5,6 @@ import android.os.Bundle;
 
 public class Calendar extends AppCompatActivity {
 
-
-
-
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
