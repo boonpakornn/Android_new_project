@@ -12,8 +12,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
@@ -27,8 +29,9 @@ public class NewsFragment extends Fragment {
     //the recyclerview
     RecyclerView recyclerView;
     private FirebaseAuth mAuth;
-    private FirebaseDatabase fdb;
-    private DatabaseReference dbrf;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseref;
+    private FirebaseStorage firebaseStorage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +45,12 @@ public class NewsFragment extends Fragment {
 
 
         mAuth = FirebaseAuth.getInstance();
-        
+        FirebaseUser user = mAuth.getCurrentUser();
+       // userId = user.getUid();
+
+        databaseref = FirebaseDatabase.getInstance().getReference().child()
+        firebaseStorage =  FirebaseStorage.getInstance();
+        stora
         //initializing the productlist
         productList = new ArrayList<>();
 
