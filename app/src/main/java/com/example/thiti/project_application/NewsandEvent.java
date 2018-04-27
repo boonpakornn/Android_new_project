@@ -34,7 +34,6 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
         projectsFragment = new ProjectsFragment();
         eventsFragment = new EventsFragment();
 
-        setFragment(newsFragment);
 
         mainnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -43,7 +42,7 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
 
                     case R.id.nav_news:
                         mainnav.setItemBackgroundResource(R.color.colorPrimary);
-                        setFragment(newsFragment);
+                      //  setFragment(NewsFragment);
                         return true;
 
 

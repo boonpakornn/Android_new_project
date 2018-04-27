@@ -3,22 +3,24 @@ package com.example.thiti.project_application;
 
 
 public class informationdetail {
-    private int information_id;
+    private int id;
     private String title;
     private String shortdesc;
-    private String fulldesc;
+    private double rating;
+    private double price;
     private int image;
 
-    public informationdetail(int id, String title, String shortdesc, String fulldesc, int image) {
-        this.information_id = id;
+    public informationdetail(int id, String title, String shortdesc, double rating, double price, int image) {
+        this.id = id;
         this.title = title;
         this.shortdesc = shortdesc;
-        this.fulldesc = fulldesc;
+        this.rating = rating;
+        this.price = price;
         this.image = image;
     }
 
     public int getId() {
-        return information_id;
+        return id;
     }
 
     public String getTitle() {
@@ -29,8 +31,12 @@ public class informationdetail {
         return shortdesc;
     }
 
-    public String getFulldesc() {
-        return fulldesc;
+    public double getRating() {
+        return rating;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public int getImage() {
