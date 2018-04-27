@@ -38,29 +38,29 @@
 
                 <ImageButton
                     android:id="@+id/news_and_events_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:contentDescription="Link to News and Projects"
-                    app:srcCompat="@drawable/news_project_button" />
+                    app:srcCompat="@android:drawable/btn_star" />
 
                 <ImageButton
                     android:id="@+id/admission_cal_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:layout_weight="1" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/btn_star" />
 
                 <ImageButton
                     android:id="@+id/calendar_button"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/btn_star" />
 
                 <ImageButton
                     android:id="@+id/noti_button"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/btn_star" />
 
