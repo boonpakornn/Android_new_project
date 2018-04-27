@@ -30,7 +30,7 @@ public class AdmissionCalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getApplicationContext();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_admission_calculator);
         gpax = (EditText) findViewById(R.id.editText2);
         thai = (EditText) findViewById(R.id.editText4);
         social = (EditText) findViewById(R.id.editText5);

@@ -8,7 +8,7 @@ import android.widget.EditText;
  * Created by Boonp on 27-Apr-18.
  */
 
-class Pop extends MainActivity{
+class Pop extends AdmissionCalculator{
     private EditText score;
     private EditText text;
 
