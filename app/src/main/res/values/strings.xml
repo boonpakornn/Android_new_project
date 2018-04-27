@@ -5,7 +5,7 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="Username_Input">username</string>
+    <string name="Username_Input">Username</string>
     <string name="Password_Input">Password</string>
     <string name="Firstname_Input">Firstname</string>
     <string name="Lastname_Input">Lastname</string>
@@ -53,4 +53,5 @@
     <string name="account">Account</string>
     <string name="pref">Preference</string>
     <string name="action_sign_out">Sign out</string>
+    <string name="welcome">Welcome to MUICT information</string>
 </resources>
