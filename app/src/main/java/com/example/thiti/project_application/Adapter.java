@@ -8,23 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 
 import java.util.List;
 
-/**
- * Created by Belal on 10/18/2017.
- */
 
-
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.ProductViewHolder> {
 
 
     //this context we will use to inflate the layout
@@ -34,7 +22,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     private List<informationdetail> productList;
 
     //getting the context and product list with constructor
-    public ProductAdapter(Context mCtx, List<informationdetail> productList) {
+    public Adapter(Context mCtx, List<informationdetail> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -55,8 +43,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         //binding the data with the viewholder views
         holder.textViewTitle.setText(product.getTitle());
         holder.textViewShortDesc.setText(product.getShortdesc());
-        holder.textViewRating.setText(String.valueOf(product.getRating()));
-        holder.textViewPrice.setText(String.valueOf(product.getPrice()));
+        holder.textViewFullDesc.setText(product.getFulldesc());
 
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
 
@@ -71,7 +58,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
+        TextView textViewTitle, textViewShortDesc, textViewFullDesc;
         ImageView imageView;
 
         public ProductViewHolder(View itemView) {
@@ -79,9 +66,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewRating = itemView.findViewById(R.id.textViewRating);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            textViewFullDesc = itemView.findViewById(R.id.textViewFullDesc);
             imageView = itemView.findViewById(R.id.imageView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
     }
 }
