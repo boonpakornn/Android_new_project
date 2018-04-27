@@ -1,6 +1,7 @@
 package com.example.thiti.project_application;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,18 +12,18 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    private EditText gpax;
-    private EditText thai;
-    private EditText social;
-    private EditText eng;
-    private EditText math;
-    private EditText science;
-    private EditText gat;
-    private EditText pat1;
-    private EditText pat2;
-    private Context mContext;
-    private EditText solution;
-    private Button calculate;
+    public EditText gpax;
+    public EditText thai;
+    public EditText social;
+    public EditText eng;
+    public EditText math;
+    public EditText science;
+    public EditText gat;
+    public EditText pat1;
+    public EditText pat2;
+    public Context mContext;
+    public EditText solution;
+    public Button calculate;
 
 
     @Override
@@ -65,14 +66,10 @@ public class MainActivity extends AppCompatActivity {
                             .setPositiveButton("OK", null).show();
                 }
                 else {
-                    double result = (new Double(gpax.getText().toString())*1500)+((new Double(thai.getText().toString()) + new Double(social.getText().toString())
-                            + new Double(eng.getText().toString()) + new Double(math.getText().toString()) + new Double(social.getText().toString()))*18)
-                            +(new Double(gat.getText().toString())*10) + (new Double(pat1.getText().toString())*20) + (new Double(pat2.getText().toString())*20);
-                    solution.setText(Double.toString(result));
-
+                    startActivity(new Intent(MainActivity.this,Pop.class));
                 }
-
             }
+
         });
     }
 }

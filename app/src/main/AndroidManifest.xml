@@ -50,9 +50,11 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
+
         <activity android:name=".Calendar" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".Pop" ></activity>
     </application>
 
 </manifest>
