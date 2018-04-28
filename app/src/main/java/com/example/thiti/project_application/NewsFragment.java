@@ -67,8 +67,16 @@ public class NewsFragment extends Fragment {
         //FirebaseUser user = mAuth.getCurrentUser();
 
         databaseref = FirebaseDatabase.getInstance().getReference().child("Information").child("News");
+<<<<<<< HEAD
         //firebaseStorage =  FirebaseStorage.getInstance();
+<<<<<<< HEAD
         =
+=======
+
+=======
+        //firebaseStorage =  FirebaseStorage.getInstance();=
+>>>>>>> ede60b8e1cc54f36c449756e4f146e056430ebe0
+>>>>>>> parent of 60aaf29... test
         //initializing the productlist
 
         databaseref.addValueEventListener(new ValueEventListener() {
