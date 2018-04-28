@@ -67,13 +67,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProductViewHolder> {
 
         public ProductViewHolder(View itemView) {
             super(itemView);
-
+            //Set all values from firebase,and put to cardciew
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             imageView = itemView.findViewById(R.id.imageView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //Put all values to another activites
                     Intent intent = new Intent(mCtx, InformationActivity.class);
                     intent.putExtra("topic", textViewTitle.getText().toString());
                     intent.putExtra("longDesc", longDesc);
@@ -84,3 +85,5 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProductViewHolder> {
         }
     }
 }
+//I use templte form this website
+//https://www.simplifiedcoding.net/android-recyclerview-cardview-tutorial/

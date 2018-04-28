@@ -22,6 +22,8 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Registration extends AppCompatActivity {
     private static final String TAG = "Registration";
+
+    //Variable Edittext
     private EditText input_username;
     private EditText input_pass;
     private EditText input_repassword;
@@ -42,7 +44,7 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registeration);
 
-
+        //Refer to xml activity
         input_username = findViewById(R.id.username);
         input_pass = findViewById(R.id.password);
         input_repassword=  findViewById(R.id.repassword);
@@ -54,20 +56,17 @@ public class Registration extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
 
-        input_username.setText("mail@mail.com");
-        input_pass.setText("1233456");
-        input_firstname.setText("first");
-        input_lastname.setText("last");
-        input_school.setText("scchool");
-        input_age.setText("66");
-        input_phone.setText("0999999999");
+
+
 
         Button btnclick = (Button) findViewById(R.id.button2);
+
+        // Connect to Firebase for Authentication
         mAuth = FirebaseAuth.getInstance();
 
 
-        //btnclick.setOnClickListener(new View.OnClickListener(this));
 
+        // When button2 is clicked, It will be call registerationUser function.
         btnclick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,14 +93,9 @@ public class Registration extends AppCompatActivity {
         }
     }
 
-    public void subscribe(View view) {
-        // สับตะไคร้หัวข้อ news
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-
-    }
-
     private void registerationUser() {
 
+        //Get all vriables from activity registeration
         final String username = input_username.getText().toString().trim();
         final String password = input_pass.getText().toString().trim();
         final String repassword = input_repassword.getText().toString().trim();
@@ -112,12 +106,8 @@ public class Registration extends AppCompatActivity {
         final String phone = input_phone.getText().toString().trim();
 
 
-        // Username
-        if (username.isEmpty()) {
-            input_username.setError(getString(R.string.error_invalid_email));
-            input_username.requestFocus();
-            return;
-        }
+        // Checking username
+
 
         if (username.isEmpty()) {
             input_username.setError("Username is required");
@@ -125,20 +115,21 @@ public class Registration extends AppCompatActivity {
             return;
         }
 
+        // Check email format
         if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
             input_username.setError("Enter a valid  email");
             input_username.requestFocus();
             return;
         }
 
-        //Password
-
+        //Checking Password error
         if (password.isEmpty()) {
             input_pass.setError(getString(R.string.error_invalid_password));
             input_pass.requestFocus();
             return;
         }
 
+        // Password must longer than 6 characters.
         if (password.length() < 6) {
             input_pass.setError("Password should be atleast 6 characters.");
             input_pass.requestFocus();
@@ -151,32 +142,35 @@ public class Registration extends AppCompatActivity {
             return;
         }
 
+        // Checking for password matched.
         if (!repassword.matches(password)) {
             input_pass.setError("Password should be matched.");
             input_pass.requestFocus();
             return;
         }
-        //Firstname
+
+        //Requiered input  for Firstname
         if (Firstname.isEmpty()) {
             input_firstname.setError("Firstname is required.");
             input_firstname.requestFocus();
             return;
         }
 
-        //Lastname
+        //Requiered input  for Lastname
         if (Lastname.isEmpty()) {
             input_lastname.setError("Lastname is required.");
             input_lastname.requestFocus();
             return;
         }
 
-        //School
+        //Requiered input  for School
         if (school.isEmpty()) {
             input_school.setError("School is required.");
             input_school.requestFocus();
             return;
         }
 
+        //Requiered input  for age
         if (age.isEmpty()) {
             input_age.setError("Age is required.");
             input_age.requestFocus();
@@ -192,12 +186,13 @@ public class Registration extends AppCompatActivity {
                 progressBar.setVisibility((View.GONE));
 
                 if (task.isSuccessful()) {
+
                     //We will store the additional in firebase database.
 
 
-                    System.out.print("Do");
                     User user = new User(username, Firstname, Lastname, school, age, phone);
 
+                    //It will go to "Users" path folder on Firebase database and create folder named by user ID
                     FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -207,6 +202,9 @@ public class Registration extends AppCompatActivity {
                                 //Display failuremessage
                                 if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                     Toast.makeText(Registration.this, "You are already registered.", Toast.LENGTH_LONG).show();
+
+
+                                    //Show when somthing got error
 
                                 } else {
                                     Toast.makeText(Registration.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -220,6 +218,7 @@ public class Registration extends AppCompatActivity {
                     Toast.makeText(Registration.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
+
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -230,10 +229,6 @@ public class Registration extends AppCompatActivity {
 
     }
 
-    private void facebooklogin() {
-
-
-    }
 
 
 }

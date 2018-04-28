@@ -96,28 +96,6 @@ public class NewsFragment extends Fragment {
             }
         });
 
-        //productList.add(new Information());
-
-
-        /*
-        //adding some items to our list
-               productList.add(
-                new Information(
-                        1,
-                        "APPLE MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)",
-                        "13.3 inch, Silver, 1.35 kg",
-                        "Wowwwwwwwww",
-                        android.R.drawable.ic_input_delete));
-
-        productList.add(
-                new Information(
-                        1,
-                        "Tmr is Friday.",
-                        "13.3 inch, Silver, 1.35 kg",
-                        "Wowwwwwwwww",
-                        android.R.drawable.ic_input_delete));
-
-        */
 
         return view;
     }
