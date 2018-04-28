@@ -88,6 +88,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 ImageView imageView = (ImageView) infoWindow.findViewById(R.id.imageView);
                 imageView.setImageResource(R.drawable.laptop);
+
                 if ("Social Fac. Canteen".equals(marker.getTitle())) {
                     imageView.setImageResource(R.drawable.food);
                 }
@@ -96,6 +97,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 else if("Salaya Store".equals(marker.getTitle())) {
                     imageView.setImageResource(R.drawable.store);
+                }
+                else if("Tram Station".equals(marker.getTitle())) {
+                    imageView.setImageResource(R.drawable.tram);
                 }
                 else if("Prince Mahidol Hall".equals(marker.getTitle())) {
                     imageView.setImageResource(R.drawable.stage);
