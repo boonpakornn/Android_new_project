@@ -34,7 +34,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
-
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,12 +1,10 @@
 package com.example.thiti.project_application;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
-
-import com.google.firebase.FirebaseApp;
 
 public class Mainfeature extends AppCompatActivity {
 

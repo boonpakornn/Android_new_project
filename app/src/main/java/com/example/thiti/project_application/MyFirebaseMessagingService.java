@@ -13,10 +13,10 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
@@ -43,7 +43,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * Create and show a custom notification containing the received FCM message.
      *
      * @param notification FCM notification payload received.
-     * @param data FCM data payload received.
+     * @param data         FCM data payload received.
      */
     private void sendNotification(RemoteMessage.Notification notification, Map<String, String> data) {
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);

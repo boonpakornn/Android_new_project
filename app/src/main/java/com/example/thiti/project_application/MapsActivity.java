@@ -1,7 +1,7 @@
 package com.example.thiti.project_application;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -39,7 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng muict = new LatLng(13.7941886,100.3248333);
+        LatLng muict = new LatLng(13.7941886, 100.3248333);
         mMap.addMarker(new MarkerOptions().position(muict).title("Marker in MUICT"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(muict));
     }

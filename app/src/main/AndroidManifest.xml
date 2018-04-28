@@ -61,9 +61,7 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Pop" />
-<<<<<<< HEAD
-        <activity android:name=".ResetPasswordActivity"></activity>
-=======
+        <activity android:name=".ResetPasswordActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -78,8 +76,9 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
->>>>>>> ede60b8e1cc54f36c449756e4f146e056430ebe0
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".InformationActivity"></activity>
     </application>
 
 </manifest>

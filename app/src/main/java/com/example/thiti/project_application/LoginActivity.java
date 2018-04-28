@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mUsernameView.setText("mail@mail.com");
         mPasswordView.setText("1233456");
-        progressBar = (ProgressBar) findViewById(R.id.progressBar) ;
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -117,21 +118,21 @@ public class LoginActivity extends AppCompatActivity {
 
 
         final String username = mUsernameView.getText().toString().trim();
-        final String password= mPasswordView.getText().toString().trim();
+        final String password = mPasswordView.getText().toString().trim();
 
-        if(username.isEmpty()){
+        if (username.isEmpty()) {
             mUsernameView.setError(getString(R.string.error_invalid_email));
             mPasswordView.requestFocus();
             return;
         }
 
-        if(username.isEmpty()){
+        if (username.isEmpty()) {
             mUsernameView.setError("Username is required");
             mUsernameView.requestFocus();
             return;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(username).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
             mUsernameView.setError("Enter a valid  email");
             mUsernameView.requestFocus();
             return;
@@ -139,18 +140,17 @@ public class LoginActivity extends AppCompatActivity {
 
         //Password
 
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             mUsernameView.setError(getString(R.string.error_invalid_password));
             mUsernameView.requestFocus();
             return;
         }
 
-        if(password.length()<6){
+        if (password.length() < 6) {
             mUsernameView.setError("Password should be atleast 6 characters.");
             mUsernameView.requestFocus();
             return;
         }
-
 
 
         progressBar.setVisibility(View.VISIBLE);
@@ -166,7 +166,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             //FirebaseUser user = mAuth.getCurrentUser();
 
-                            startActivity( new Intent(LoginActivity.this, Mainfeature.class));
+                            startActivity(new Intent(LoginActivity.this, Mainfeature.class));
 
                         } else {
                             // If sign in fails, display a message to the user.

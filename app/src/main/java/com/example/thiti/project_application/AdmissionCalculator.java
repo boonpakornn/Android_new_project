@@ -2,14 +2,12 @@ package com.example.thiti.project_application;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 
 public class AdmissionCalculator extends AppCompatActivity {
@@ -45,7 +43,7 @@ public class AdmissionCalculator extends AppCompatActivity {
         Button calculate = (Button) findViewById(R.id.button);
 
         calculate.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0){
+            public void onClick(View arg0) {
                 if ((thai.getText().length() == 0)
                         || (thai.getText().toString() == "")
                         || (gpax.getText().length() == 0)
@@ -73,14 +71,13 @@ public class AdmissionCalculator extends AppCompatActivity {
                                 }
                             });
                     alertDialog.show();
-                }
-                else {
+                } else {
                     double result = (new Double(gpax.getText().toString()) * 1500) + ((new Double(thai.getText().toString()) + new Double(social.getText().toString())
                             + new Double(eng.getText().toString()) + new Double(math.getText().toString()) + new Double(social.getText().toString())) * 18)
                             + (new Double(gat.getText().toString()) * 10) + (new Double(pat1.getText().toString()) * 20) + (new Double(pat2.getText().toString()) * 20);
                     solution.setText(Double.toString(result));
 
-                    if(result >= 11000){
+                    if (result >= 11000) {
                         AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
                         alertDialog.setTitle("Well done!");
                         alertDialog.setMessage("You have a high chance to become a part of next MUICT.");
@@ -92,8 +89,7 @@ public class AdmissionCalculator extends AppCompatActivity {
                                 });
                         alertDialog.show();
 
-                    }
-                    else{
+                    } else {
 
                         AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
                         alertDialog.setTitle("Almost there...");

@@ -1,9 +1,8 @@
 package com.example.thiti.project_application;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -47,11 +46,11 @@ public class Registration extends AppCompatActivity {
         input_username = findViewById(R.id.username);
         input_pass = findViewById(R.id.password);
         //input_email=  findViewById(R.id.email);
-        input_firstname =  findViewById(R.id.firstname);
+        input_firstname = findViewById(R.id.firstname);
         input_lastname = findViewById(R.id.lastname);
-        input_school  =  findViewById(R.id.school);
-        input_age =  findViewById(R.id.age);
-        input_phone =  findViewById(R.id.phone);
+        input_school = findViewById(R.id.school);
+        input_age = findViewById(R.id.age);
+        input_phone = findViewById(R.id.phone);
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
 
@@ -63,7 +62,7 @@ public class Registration extends AppCompatActivity {
         input_age.setText("66");
         input_phone.setText("0999999999");
 
-        Button btnclick = (Button)findViewById(R.id.button2);
+        Button btnclick = (Button) findViewById(R.id.button2);
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -82,14 +81,14 @@ public class Registration extends AppCompatActivity {
             }
         });
         /*
-        */
+         */
 
-        }
+    }
 
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
 
-        if(mAuth.getCurrentUser()!=null){
+        if (mAuth.getCurrentUser() != null) {
             //handle thid already login user
 
         }
@@ -101,10 +100,10 @@ public class Registration extends AppCompatActivity {
 
     }
 
-    private void registerationUser(){
+    private void registerationUser() {
 
         final String username = input_username.getText().toString().trim();
-        final String password= input_pass.getText().toString().trim();
+        final String password = input_pass.getText().toString().trim();
         final String Firstname = input_firstname.getText().toString().trim();
         final String Lastname = input_lastname.getText().toString().trim();
         final String school = input_lastname.getText().toString().trim();
@@ -112,22 +111,20 @@ public class Registration extends AppCompatActivity {
         final String phone = input_phone.getText().toString().trim();
 
 
-
-
         // Username
-        if(username.isEmpty()){
+        if (username.isEmpty()) {
             input_username.setError(getString(R.string.error_invalid_email));
             input_username.requestFocus();
             return;
         }
 
-        if(username.isEmpty()){
+        if (username.isEmpty()) {
             input_username.setError("Username is required");
             input_username.requestFocus();
             return;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(username).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
             input_username.setError("Enter a valid  email");
             input_username.requestFocus();
             return;
@@ -135,39 +132,39 @@ public class Registration extends AppCompatActivity {
 
         //Password
 
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             input_pass.setError(getString(R.string.error_invalid_password));
             input_pass.requestFocus();
             return;
         }
 
-        if(password.length()<6){
+        if (password.length() < 6) {
             input_pass.setError("Password should be atleast 6 characters.");
             input_pass.requestFocus();
             return;
         }
         //Firstname
-        if(Firstname.isEmpty()){
+        if (Firstname.isEmpty()) {
             input_firstname.setError("Firstname is requored.");
             input_firstname.requestFocus();
             return;
         }
 
         //Lastname
-        if(Lastname.isEmpty()){
+        if (Lastname.isEmpty()) {
             input_lastname.setError("Lastname is requored.");
             input_lastname.requestFocus();
             return;
         }
 
         //School
-        if(school.isEmpty()){
+        if (school.isEmpty()) {
             input_school.setError("School is requored.");
             input_school.requestFocus();
             return;
         }
 
-        if(age.isEmpty()){
+        if (age.isEmpty()) {
             input_age.setError("Age is requored.");
             input_age.requestFocus();
             return;
@@ -181,7 +178,7 @@ public class Registration extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility((View.GONE));
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     //We will store the additional in firebase database.
 
 
@@ -195,18 +192,18 @@ public class Registration extends AppCompatActivity {
                                 Toast.makeText(Registration.this, getString(R.string.registra), Toast.LENGTH_LONG).show();
                             } else {
                                 //Display failuremessage
-                                if(task.getException() instanceof FirebaseAuthUserCollisionException){
-                                    Toast.makeText(Registration.this,"You are already registered.", Toast.LENGTH_LONG).show();
+                                if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                    Toast.makeText(Registration.this, "You are already registered.", Toast.LENGTH_LONG).show();
 
-                                }else{
-                                    Toast.makeText(Registration.this,task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(Registration.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
 
                                 }
                             }
                         }
                     });
 
-                }else{
+                } else {
                     Toast.makeText(Registration.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
@@ -217,23 +214,13 @@ public class Registration extends AppCompatActivity {
             }
         });
 
-        
 
+    }
 
-        }
-
-    private void facebooklogin(){
-
+    private void facebooklogin() {
 
 
     }
-                
-
-
-
-
-
-
 
 
 }
