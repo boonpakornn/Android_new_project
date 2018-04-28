@@ -59,3 +59,6 @@ public class Information {
         this.LinkImg = linkImg;
     }
 }
+
+//I use templte form this website
+//https://www.simplifiedcoding.net/android-recyclerview-cardview-tutorial/

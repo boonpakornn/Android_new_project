@@ -64,3 +64,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
 
 }
+
+// I use template from this website
+//https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth

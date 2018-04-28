@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+// This class will be called from adapter
 public class InformationActivity extends AppCompatActivity {
 
     TextView topic;
@@ -24,10 +25,13 @@ public class InformationActivity extends AppCompatActivity {
         image.setAdjustViewBounds(true);
         longDesc = findViewById(R.id.longDesc);
 
+        //Bundle will contain data from adapter, which is recieved from firebase
         Bundle bundle = getIntent().getExtras();
+
         if (bundle != null) {
             topic.setText(bundle.getString("topic"));
             longDesc.setText(bundle.getString("longDesc"));
+            //Picasso library willl Convert path from internet 
             Picasso.get().load(bundle.getString("linkImg")).into(image);
         }
     }
