@@ -54,4 +54,5 @@
     <string name="pref">Preference</string>
     <string name="action_sign_out">Sign out</string>
     <string name="welcome">Welcome to MUICT information</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
