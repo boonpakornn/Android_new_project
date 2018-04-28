@@ -134,7 +134,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/re_password"
-                android:inputType="textCapCharacters"
+                android:inputType="textPassword"
                 tools:layout_editor_absoluteX="153dp"
                 tools:layout_editor_absoluteY="157dp" />
         </LinearLayout>
@@ -277,7 +277,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/Age_input"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 tools:layout_editor_absoluteX="153dp"
                 tools:layout_editor_absoluteY="352dp" />
 
@@ -314,7 +314,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/Phone_input"
-                android:inputType="textCapCharacters"
+                android:inputType="textCapCharacters|phone"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="153dp"
                 tools:layout_editor_absoluteY="398dp" />

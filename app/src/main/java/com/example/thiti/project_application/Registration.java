@@ -1,5 +1,6 @@
 package com.example.thiti.project_application;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -198,6 +199,8 @@ public class Registration extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(Registration.this, getString(R.string.registra), Toast.LENGTH_LONG).show();
+                                // Forced user after log in sucess, go to login activity
+                                startActivity(new Intent(Registration.this, LoginActivity.class));
                             } else {
                                 //Display failuremessage
                                 if (task.getException() instanceof FirebaseAuthUserCollisionException) {
