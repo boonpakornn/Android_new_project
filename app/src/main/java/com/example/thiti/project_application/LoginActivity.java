@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             "foo@example.com:hello", "bar@example.com:world"
     };
 
+    // Declaring variables
     private AutoCompleteTextView mUsernameView;
     private EditText mPasswordView;
     private View mProgressView;
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
         // Set up the login form.
         mUsernameView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -59,11 +61,12 @@ public class LoginActivity extends AppCompatActivity {
 
         mUsernameView.setText("mail@mail.com");
         mPasswordView.setText("1233456");
+
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        // Connecting firebase
         mAuth = FirebaseAuth.getInstance();
 
-        //findViewById(R.id.email_sign_in_button).setOnClickListener();
 
 
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -76,6 +79,10 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+
+        // When user click button, it will call userLogin function.
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
