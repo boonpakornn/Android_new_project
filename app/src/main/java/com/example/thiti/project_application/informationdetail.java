@@ -7,9 +7,9 @@ public class informationdetail {
     private String title;
     private String shortdesc;
     private String fulldesc;
-    private int image;
+    private String image;
 
-    public informationdetail(int id, String title, String shortdesc, String fulldesc, int image) {
+    public informationdetail(int id, String title, String shortdesc, String fulldesc, String image) {
         this.information_id = id;
         this.title = title;
         this.shortdesc = shortdesc;
@@ -33,7 +33,7 @@ public class informationdetail {
         return fulldesc;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 }

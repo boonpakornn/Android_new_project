@@ -44,8 +44,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProductViewHolder> {
         holder.textViewTitle.setText(product.getTitle());
         holder.textViewShortDesc.setText(product.getShortdesc());
         holder.textViewFullDesc.setText(product.getFulldesc());
+         //+-=
 
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
+        //
+      //  holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
 
     }
 

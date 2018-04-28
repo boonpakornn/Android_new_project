@@ -3,6 +3,7 @@ package com.example.thiti.project_application;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,23 +28,25 @@ import java.util.List;
 public class NewsFragment extends Fragment {
 
     //a list to store all the products
+    FirebaseDatabase mydatabase;
+    DatabaseReference databaseref;
+
     List<informationdetail> productList;
-
-
     RecyclerView recyclerView;
-    private FirebaseAuth mAuth;
-    private FirebaseDatabase firebaseDatabase;
+
+    FirebaseAuth mAuth;
+
     private  FirebaseAuth.AuthStateListener mAuthListener;
 
-    private DatabaseReference databaseref;
     private FirebaseStorage firebaseStorage;
 
-    private String  currentId;
+
+    //Variable
+    private Integer  currentId;
     private String currenttitle;
 
     private String  shortDes;
     private String longDes;
-
     private String imgLink;
 
 
@@ -57,44 +60,43 @@ public class NewsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-       // userId = user.getUid();
+
+
+        mydatabase = FirebaseDatabase.getInstance();
+        //FirebaseUser user = mAuth.getCurrentUser();
 
         databaseref = FirebaseDatabase.getInstance().getReference().child("Information").child("News");
         //firebaseStorage =  FirebaseStorage.getInstance();
 
         //initializing the productlist
-        productList = new ArrayList<>();
-
 
         databaseref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                productList = new ArrayList<>();
 
+                for(DataSnapshot dataSnapshot1 :dataSnapshot.getChildren()){
+                    informationdetail value = dataSnapshot1.getValue(informationdetail.class);
 
+                    //Variable
+                    Integer  currentId = value.getId() ;
+                    System.out.println("This is my ID   "+currentId);
+                    String currenttitle = value.getTitle() ;;
 
-                currentId = dataSnapshot.child("ID").getValue().toString().trim();
-                Integer.parseInt(currentId);
-                currenttitle = dataSnapshot.child("Topic").getValue().toString().trim();
-                //currentId = dataSnapshot.child().getValue().toString().trim();
-                longDes  = dataSnapshot.child("shortDes").getValue().toString().trim();
+                    String  currentshortDes = value.getShortdesc();
+                    String currentlongDes = value.getFulldesc();
+                    String currentimgLink = value.getImage();
+                    informationdetail addValue = new informationdetail(currentId,currenttitle, currentshortDes,currentlongDes,currentimgLink);
+                    productList.add(addValue);
 
-                shortDes  = dataSnapshot.child("LongDes").getValue().toString().trim();
-                imgLink = dataSnapshot.child("LinkImg").getValue().toString().trim();
-                Integer.parseInt(imgLink);
+                }
 
-
-
-                productList.add(new informationdetail(Integer.parseInt(currentId),currenttitle,shortDes,longDes, Integer.parseInt(imgLink)
- ));
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.w("Error", databaseError.toException());
             }
         });
 
