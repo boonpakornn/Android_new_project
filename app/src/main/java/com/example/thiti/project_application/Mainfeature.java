@@ -21,7 +21,7 @@ public class Mainfeature extends AppCompatActivity {
         newsAndEventsButton = findViewById(R.id.news_and_events_button);
         admissionCalculator = findViewById(R.id.admission_cal_button);
         setting = findViewById(R.id.settings_button);
-        calendarView = findViewById(R.id.calendar_button);
+        calendarView = findViewById(R.id.location_button);
 
         newsAndEventsButton.setOnClickListener(new View.OnClickListener() {
             @Override
