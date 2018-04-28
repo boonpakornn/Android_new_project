@@ -23,7 +23,7 @@
     <string name="gat">GAT</string>
     <string name="pat1">PAT 1</string>
     <string name="pat_2">PAT 2</string>
-    <string name="calculate">Calculate</string>
+    <string name="calculate">Calculate Total Score</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
