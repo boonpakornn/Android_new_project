@@ -68,7 +68,7 @@ public class NewsFragment extends Fragment {
 
         databaseref = FirebaseDatabase.getInstance().getReference().child("Information").child("News");
         //firebaseStorage =  FirebaseStorage.getInstance();
-
+        =
         //initializing the productlist
 
         databaseref.addValueEventListener(new ValueEventListener() {

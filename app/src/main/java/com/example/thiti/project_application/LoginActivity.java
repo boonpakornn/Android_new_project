@@ -44,8 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     private View mLoginFormView;
     private TextView regis;
 
-    private TextView resetPass;
-
     private FirebaseAuth mAuth;
 
     private ProgressBar progressBar;
@@ -57,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
         mUsernameView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
         regis = findViewById(R.id.register_account);
-        resetPass = findViewById(R.id.forget_password);
 
         mUsernameView.setText("mail@mail.com");
         mPasswordView.setText("1233456");
@@ -101,14 +98,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, Registration.class));
             }
         });
-
-        resetPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-            }
-        });
-
 
         mAuth = FirebaseAuth.getInstance();
     }
