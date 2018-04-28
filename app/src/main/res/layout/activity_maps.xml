@@ -7,3 +7,5 @@
     android:layout_height="match_parent"
     map:cameraZoom="16"
     tools:context="com.example.thiti.project_application.MapsActivity" />
+
+

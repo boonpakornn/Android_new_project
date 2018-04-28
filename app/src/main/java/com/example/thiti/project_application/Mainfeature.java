@@ -47,7 +47,7 @@ public class Mainfeature extends AppCompatActivity {
         calendarView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Mainfeature.this, Calendar.class));
+                startActivity(new Intent(Mainfeature.this, MapsActivity.class));
             }
         });
     }
