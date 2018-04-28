@@ -145,27 +145,27 @@ public class Registration extends AppCompatActivity {
         }
         //Firstname
         if (Firstname.isEmpty()) {
-            input_firstname.setError("Firstname is requored.");
+            input_firstname.setError("Firstname is required.");
             input_firstname.requestFocus();
             return;
         }
 
         //Lastname
         if (Lastname.isEmpty()) {
-            input_lastname.setError("Lastname is requored.");
+            input_lastname.setError("Lastname is required.");
             input_lastname.requestFocus();
             return;
         }
 
         //School
         if (school.isEmpty()) {
-            input_school.setError("School is requored.");
+            input_school.setError("School is required.");
             input_school.requestFocus();
             return;
         }
 
         if (age.isEmpty()) {
-            input_age.setError("Age is requored.");
+            input_age.setError("Age is required.");
             input_age.requestFocus();
             return;
         }
