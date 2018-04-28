@@ -61,7 +61,6 @@ public class NewsFragment extends Fragment {
 
         databaseref = FirebaseDatabase.getInstance().getReference().child("Information").child("News");
 
-
         databaseref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
