@@ -55,4 +55,15 @@
     <string name="action_sign_out">Sign out</string>
     <string name="welcome">Welcome to MUICT information</string>
     <string name="title_activity_maps">Map</string>
+    <string name="username">Username</string>
+    <string name="fill_the_informations">Fill the informations</string>
+    <string name="password">Password</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="school">School</string>
+    <string name="age">Age</string>
+    <string name="phone">Phone</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="re_password">Re-Password</string>
 </resources>

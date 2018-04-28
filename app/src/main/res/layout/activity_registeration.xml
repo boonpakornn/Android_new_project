@@ -6,19 +6,23 @@
     android:layout_height="match_parent">
 
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/constraintLayout"
-        app:layout_anchorGravity="top|center" />
-
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context="com.example.thiti.project_application.AdmissionCalculator">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            app:layout_anchor="@+id/constraintLayout"
+            app:layout_anchorGravity="top|center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
         <TextView
             android:id="@+id/textView3"
@@ -26,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Fill the informations"
+            android:text="@string/fill_the_informations"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Username"
+                android:text="@string/username"
                 android:textSize="18sp"
                 android:textStyle="bold"
 
@@ -83,7 +87,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Password"
+                android:text="@string/password"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="48dp"
@@ -113,29 +117,30 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView_Email"
+                android:id="@+id/textView_Repassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Email"
+                android:text="@string/re_password"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="51dp"
                 tools:layout_editor_absoluteY="167dp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/repassword"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Email_input"
+                android:hint="@string/re_password"
                 android:inputType="textCapCharacters"
                 tools:layout_editor_absoluteX="153dp"
                 tools:layout_editor_absoluteY="157dp" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -151,7 +156,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Firstname"
+                android:text="@string/firstname"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints"
@@ -187,7 +192,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Lastname"
+                android:text="@string/lastname"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints"
@@ -223,7 +228,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="School"
+                android:text="@string/school"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints"
@@ -259,7 +264,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Age"
+                android:text="@string/age"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="83dp"
@@ -295,7 +300,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Phone"
+                android:text="@string/phone"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints"
@@ -331,7 +336,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Confirm"
+                android:text="@string/confirm"
                 tools:layout_editor_absoluteX="83dp"
                 tools:layout_editor_absoluteY="513dp" />
 
@@ -341,7 +346,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="subscribe"
-                android:text="Cancel" />
+                android:text="@string/cancel" />
             tools:layout_editor_absoluteX="218dp"
             tools:layout_editor_absoluteY="513dp" />
 
