@@ -24,7 +24,7 @@ public class Registration extends AppCompatActivity {
     private static final String TAG = "Registration";
     private EditText input_username;
     private EditText input_pass;
-    private EditText input_email;
+    private EditText input_repassword;
     private EditText input_firstname;
     private EditText input_lastname;
     private EditText input_school;
@@ -45,7 +45,7 @@ public class Registration extends AppCompatActivity {
 
         input_username = findViewById(R.id.username);
         input_pass = findViewById(R.id.password);
-        //input_email=  findViewById(R.id.email);
+        input_repassword=  findViewById(R.id.repassword);
         input_firstname = findViewById(R.id.firstname);
         input_lastname = findViewById(R.id.lastname);
         input_school = findViewById(R.id.school);
@@ -104,6 +104,7 @@ public class Registration extends AppCompatActivity {
 
         final String username = input_username.getText().toString().trim();
         final String password = input_pass.getText().toString().trim();
+        final String repassword = input_repassword.getText().toString().trim();
         final String Firstname = input_firstname.getText().toString().trim();
         final String Lastname = input_lastname.getText().toString().trim();
         final String school = input_lastname.getText().toString().trim();
@@ -140,6 +141,18 @@ public class Registration extends AppCompatActivity {
 
         if (password.length() < 6) {
             input_pass.setError("Password should be atleast 6 characters.");
+            input_pass.requestFocus();
+            return;
+        }
+
+        if (repassword.isEmpty()) {
+            input_pass.setError("Re-password is required");
+            input_pass.requestFocus();
+            return;
+        }
+
+        if (!repassword.matches(password)) {
+            input_pass.setError("Password should be matched.");
             input_pass.requestFocus();
             return;
         }
