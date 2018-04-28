@@ -18,11 +18,13 @@ public class Mainfeature extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainfeature);
 
+        //set the button value from button in xml files.
         newsAndEventsButton = findViewById(R.id.news_and_events_button);
         admissionCalculator = findViewById(R.id.admission_cal_button);
         setting = findViewById(R.id.settings_button);
         calendarView = findViewById(R.id.location_button);
 
+        //set the intent to each feature according to buttons.
         newsAndEventsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

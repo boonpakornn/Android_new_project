@@ -13,7 +13,9 @@ public class SplashScreen extends AppCompatActivity {
         Thread myThread = new Thread() {
             public void run() {
                 try {
+                    //set the splash screen for 3000 milliseconds
                     sleep(3000);
+                    //then intent to the login page
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                     finish();

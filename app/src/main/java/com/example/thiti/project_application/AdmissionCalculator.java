@@ -11,24 +11,26 @@ import android.widget.EditText;
 
 
 public class AdmissionCalculator extends AppCompatActivity {
-    public EditText gpax;
-    public EditText thai;
-    public EditText social;
-    public EditText eng;
-    public EditText math;
-    public EditText science;
-    public EditText gat;
-    public EditText pat1;
-    public EditText pat2;
+    public EditText gpax;       //Cumulative grade
+    public EditText thai;       //o-net thai score
+    public EditText social;     //o-net social score
+    public EditText eng;        //o-net eng score
+    public EditText math;       //o-net math score
+    public EditText science;    //o-net science score
+    public EditText gat;        //gat score
+    public EditText pat1;       //pat1 score
+    public EditText pat2;       //pat2 score
     public Context mContext;
-    public EditText solution;
-    public Button calculate;
+    public EditText solution;   //total score
+    public Button calculate;    //calculated button
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admission_calculator);
+
+        //get the value from user's input
         mContext = getApplicationContext();
         gpax = (EditText) findViewById(R.id.editText2);
         thai = (EditText) findViewById(R.id.editText4);
@@ -42,8 +44,10 @@ public class AdmissionCalculator extends AppCompatActivity {
         solution = (EditText) findViewById(R.id.editText);
         Button calculate = (Button) findViewById(R.id.button);
 
+        //action after user input all of variables and click on the button
         calculate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //if user not fill in any scores, the application will alert the error message
                 if ((thai.getText().length() == 0)
                         || (thai.getText().toString() == "")
                         || (gpax.getText().length() == 0)
@@ -61,6 +65,7 @@ public class AdmissionCalculator extends AppCompatActivity {
                         || (pat2.getText().length() == 0)
                         || (pat2.getText().toString() == "")) {
 
+                    //AlertDialog to popup the error message
                     AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
                     alertDialog.setTitle("Error");
                     alertDialog.setMessage("Some inputs are empty");
@@ -71,12 +76,15 @@ public class AdmissionCalculator extends AppCompatActivity {
                                 }
                             });
                     alertDialog.show();
+
                 } else {
+                    //calculate the total score from user's input
                     double result = (new Double(gpax.getText().toString()) * 1500) + ((new Double(thai.getText().toString()) + new Double(social.getText().toString())
                             + new Double(eng.getText().toString()) + new Double(math.getText().toString()) + new Double(social.getText().toString())) * 18)
                             + (new Double(gat.getText().toString()) * 10) + (new Double(pat1.getText().toString()) * 20) + (new Double(pat2.getText().toString()) * 20);
                     solution.setText(Double.toString(result));
 
+                    //popup the message when score is greater than 11000 (have a chance to become a part of MUICT)
                     if (result >= 11000) {
                         AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
                         alertDialog.setTitle("Well done!");
@@ -89,8 +97,9 @@ public class AdmissionCalculator extends AppCompatActivity {
                                 });
                         alertDialog.show();
 
-                    } else {
-
+                    }
+                    //popup the message when score is less than 11000 (too low score)
+                    else {
                         AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
                         alertDialog.setTitle("Almost there...");
                         alertDialog.setMessage("You may need to practice more and achieve a higher score. Keep fighting!");
