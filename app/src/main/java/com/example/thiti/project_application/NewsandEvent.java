@@ -55,7 +55,7 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
 
 
                     case R.id.name_event:
-                        mainnav.setItemBackgroundResource(R.color.colorPrimaryDark);
+                        mainnav.setItemBackgroundResource(R.color.colorPrimary);
                         setFragment(eventsFragment);
 
                         return true;
