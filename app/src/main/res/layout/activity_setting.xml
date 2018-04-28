@@ -56,7 +56,9 @@
             android:paddingLeft="15dp"
             android:text="@string/action_sign_out"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:onClick="onClick"
+            android:clickable="true"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
