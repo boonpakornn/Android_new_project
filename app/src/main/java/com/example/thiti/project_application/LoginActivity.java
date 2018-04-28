@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private TextView regis;
+    private TextView forgetPass;
 
     private FirebaseAuth mAuth;
 
@@ -58,11 +59,15 @@ public class LoginActivity extends AppCompatActivity {
         mUsernameView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
         regis = findViewById(R.id.register_account);
-
+        forgetPass = findViewById(R.id.forget_password);
         mUsernameView.setText("mail@mail.com");
         mPasswordView.setText("1233456");
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        //Set progressbar unvisible
+        progressBar.setVisibility(View.GONE);
+
 
         // Connecting firebase
         mAuth = FirebaseAuth.getInstance();
@@ -88,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                progressBar.setVisibility(View.VISIBLE);
                 switch (view.getId()) {
                     case R.id.email_sign_in_button:
 
@@ -100,10 +105,25 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Link register button to registration activity.
         regis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, Registration.class));
+
+
+            }
+        });
+
+
+        //Link forget password button to ResetPassword  activity.
+
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+
+
             }
         });
 
@@ -116,6 +136,8 @@ public class LoginActivity extends AppCompatActivity {
         final String username = mUsernameView.getText().toString().trim();
         final String password = mPasswordView.getText().toString().trim();
 
+
+        // Check all variable before log in
         if (username.isEmpty()) {
             mUsernameView.setError(getString(R.string.error_invalid_email));
             mPasswordView.requestFocus();
@@ -149,10 +171,12 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        progressBar.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(username, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -172,7 +196,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
 
-                        // ...
                     }
                 });
 

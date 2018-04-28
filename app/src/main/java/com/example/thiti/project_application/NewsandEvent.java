@@ -10,6 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+
+//NewsandEvent layout and class adapted from the below youtube website
+//https://www.youtube.com/watch?v=EbcdMxAIr54
+
 public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.OnFragmentInteractionListener {
 
     private BottomNavigationView mainnav;
@@ -39,6 +43,8 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
         mainnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                // After click the button, set each button link to fragment activity.
                 switch (item.getItemId()) {
 
                     case R.id.nav_news:
@@ -46,12 +52,6 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
                         setFragment(newsFragment);
                         return true;
 
-
-                    case R.id.nav_project:
-                        mainnav.setItemBackgroundResource(R.color.colorAccent);
-                        setFragment(projectsFragment);
-
-                        return true;
 
 
                     case R.id.name_event:
@@ -72,6 +72,7 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
     }
 
     private void setFragment(Fragment fragment) {
+
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commit();

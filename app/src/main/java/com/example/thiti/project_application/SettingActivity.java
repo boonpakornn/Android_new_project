@@ -21,7 +21,8 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(SettingActivity.this, ResetPasswordActivity.class);
+                Intent i = new Intent(SettingActivity.this, LoginActivity.class);
+                // After logging out, we need to clear all activity recoard.
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
 
