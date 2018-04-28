@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private TextView regis;
 
     private FirebaseAuth mAuth;
 
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         // Set up the login form.
         mUsernameView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
+        regis = findViewById(R.id.register_account);
 
         mUsernameView.setText("mail@mail.com");
         mPasswordView.setText("1233456");
@@ -87,12 +89,15 @@ public class LoginActivity extends AppCompatActivity {
                     default:
                         break;
                 }
-
-
-
             }
         });
 
+        regis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, Registration.class));
+            }
+        });
 
         mAuth = FirebaseAuth.getInstance();
     }

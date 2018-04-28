@@ -1,6 +1,7 @@
 package com.example.thiti.project_application;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -29,8 +30,8 @@ public class AdmissionCalculator extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = getApplicationContext();
         setContentView(R.layout.activity_admission_calculator);
+        mContext = getApplicationContext();
         gpax = (EditText) findViewById(R.id.editText2);
         thai = (EditText) findViewById(R.id.editText4);
         social = (EditText) findViewById(R.id.editText5);
@@ -61,17 +62,55 @@ public class AdmissionCalculator extends AppCompatActivity {
                         || (pat1.getText().toString() == "")
                         || (pat2.getText().length() == 0)
                         || (pat2.getText().toString() == "")) {
-                    new AlertDialog.Builder(mContext).setTitle("Error")
-                            .setMessage("Some inputs are empty")
-                            .setPositiveButton("OK", null).show();
+
+                    AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
+                    alertDialog.setTitle("Error");
+                    alertDialog.setMessage("Some inputs are empty");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
                 }
                 else {
-                    startActivity(new Intent(AdmissionCalculator.this,Pop.class));
+                    double result = (new Double(gpax.getText().toString()) * 1500) + ((new Double(thai.getText().toString()) + new Double(social.getText().toString())
+                            + new Double(eng.getText().toString()) + new Double(math.getText().toString()) + new Double(social.getText().toString())) * 18)
+                            + (new Double(gat.getText().toString()) * 10) + (new Double(pat1.getText().toString()) * 20) + (new Double(pat2.getText().toString()) * 20);
+                    solution.setText(Double.toString(result));
+
+                    if(result >= 11000){
+                        AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
+                        alertDialog.setTitle("Well done!");
+                        alertDialog.setMessage("You have a high chance to become a part of next MUICT.");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+
+                    }
+                    else{
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
+                        alertDialog.setTitle("Almost there...");
+                        alertDialog.setMessage("You may need to practice more and achieve a higher score. Keep fighting!");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+
+
+                    }
                 }
             }
 
         });
     }
 }
-
-

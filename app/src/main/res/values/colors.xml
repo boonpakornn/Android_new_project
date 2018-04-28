@@ -6,6 +6,8 @@
     
     <color name="colorWhite">#ffffff</color>
     <color name="colorWhiteTran">#80ffffff</color>
+    <color name="colorFaculty">#00b386</color>
+
 
     <color name="black_overlay">#66000000</color>
 </resources>
