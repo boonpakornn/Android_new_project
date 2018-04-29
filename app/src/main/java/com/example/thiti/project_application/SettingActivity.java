@@ -8,15 +8,23 @@ import android.widget.TextView;
 
 public class SettingActivity extends AppCompatActivity {
 
-
+    TextView aboutus;
     TextView signOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
+        aboutus = findViewById(R.id.aboutus);
         signOut = findViewById(R.id.logout);
+
+
+        aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,aboutus.class));
+            }
+        });
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

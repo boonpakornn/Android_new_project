@@ -11,12 +11,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/general"
+            android:id="@+id/aboutus"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="@string/general"
+            android:text="@string/about_us"
             android:textSize="20sp" />
 
         <TextView
