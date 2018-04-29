@@ -71,7 +71,7 @@ public class NewsFragment extends Fragment {
 
                     //Variable
                     Long currentId = value.getID();
-                    System.out.println("This is my ID   " + currentId);
+                    //System.out.println("This is my ID   " + currentId);
                     String currenttitle = value.getTopic();
 
                     String currentshortDes = value.getShortDesc();
