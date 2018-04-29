@@ -1,5 +1,6 @@
 package com.example.thiti.project_application;
 
+// This Code was copy from https://medium.com/@jirawatee/รู้จัก-firebase-cloud-messaging-fcm-ตั้งแต่-zero-จนเป็น-hero-fb7900af92cd
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -89,7 +90,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             channel.setShowBadge(true);
             channel.canShowBadge();
             channel.enableLights(true);
-            channel.setLightColor(Color.RED);
+            channel.setLightColor(Color.BLUE);
             channel.enableVibration(true);
             channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500});
             notificationManager.createNotificationChannel(channel);

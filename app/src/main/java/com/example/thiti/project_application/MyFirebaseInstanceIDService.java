@@ -1,5 +1,7 @@
 package com.example.thiti.project_application;
 
+// This Code was copy from https://medium.com/@jirawatee/รู้จัก-firebase-cloud-messaging-fcm-ตั้งแต่-zero-จนเป็น-hero-fb7900af92cd
+
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -40,3 +42,5 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         // TODO: Implement this method to send token to your app server.
     }
 }
+
+
