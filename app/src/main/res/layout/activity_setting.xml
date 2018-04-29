@@ -41,15 +41,6 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/pref"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:text="@string/pref"
-            android:textSize="20sp" />
-
-        <TextView
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
