@@ -1,7 +1,8 @@
 package com.example.thiti.project_application;
 
-public class User {
 
+// This class use for store each object from Firebasedatabase.
+public class User {
 
     public String username, firstname, lastname, school, age, phone;
 

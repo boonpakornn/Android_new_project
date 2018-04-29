@@ -14,14 +14,13 @@ import android.widget.FrameLayout;
 //NewsandEvent layout and class adapted from the below youtube website
 //https://www.youtube.com/watch?v=EbcdMxAIr54
 
-public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.OnFragmentInteractionListener {
+public class NewsandEvent extends AppCompatActivity  {
 
     private BottomNavigationView mainnav;
     private FrameLayout mainframe;
 
 
     private NewsFragment newsFragment;
-    private ProjectsFragment projectsFragment;
     private EventsFragment eventsFragment;
 
 
@@ -35,7 +34,6 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
         mainnav = (BottomNavigationView) findViewById(R.id.main_nav);
 
         newsFragment = new NewsFragment();
-        projectsFragment = new ProjectsFragment();
         eventsFragment = new EventsFragment();
 
         setFragment(newsFragment);
@@ -80,7 +78,7 @@ public class NewsandEvent extends AppCompatActivity implements ProjectsFragment.
 
     }
 
-    @Override
+
     public void onFragmentInteraction(Uri uri) {
 
     }

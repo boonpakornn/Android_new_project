@@ -14,6 +14,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+
+// I use template from this website
+//https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth
 public class ResetPasswordActivity extends AppCompatActivity {
 
     private EditText inputEmail;
@@ -26,14 +29,14 @@ public class ResetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
+        // Declare variable link to xml page
         inputEmail = (EditText) findViewById(R.id.email);
         btnReset = (Button) findViewById(R.id.btn_reset_password);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         auth = FirebaseAuth.getInstance();
 
-
+        // When reset button was clicked, Call sendPasswordResetEmail
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +67,3 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
 
 }
-
-// I use template from this website
-//https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth

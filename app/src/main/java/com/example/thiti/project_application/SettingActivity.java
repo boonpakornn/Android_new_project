@@ -67,6 +67,8 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+        // Button to turn on and turn off nontifiction.
+        //Nontification might delay depending on Firebase server.
         noti.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -79,6 +81,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+        //This will maintain state of switch button. when users go to another page and come back, the switch is still checked.
         SharedPreferences sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         noti.setChecked(sharedPreferences.getBoolean("receiveNotification", true));
         if (noti.isChecked())

@@ -60,8 +60,9 @@ public class LoginActivity extends AppCompatActivity {
         mPasswordView = (EditText) findViewById(R.id.password);
         regis = findViewById(R.id.register_account);
         forgetPass = findViewById(R.id.forget_password);
-        mUsernameView.setText("mail@mail.com");
-        mPasswordView.setText("1233456");
+
+        //mUsernameView.setText("mail@mail.com");
+        //mPasswordView.setText("1233456");
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -93,7 +94,6 @@ public class LoginActivity extends AppCompatActivity {
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
                 switch (view.getId()) {
                     case R.id.email_sign_in_button:
 
@@ -138,11 +138,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         // Check all variable before log in
-        if (username.isEmpty()) {
-            mUsernameView.setError(getString(R.string.error_invalid_email));
-            mPasswordView.requestFocus();
-            return;
-        }
+
 
         if (username.isEmpty()) {
             mUsernameView.setError("Username is required");
@@ -159,20 +155,22 @@ public class LoginActivity extends AppCompatActivity {
         //Password
 
         if (password.isEmpty()) {
-            mUsernameView.setError(getString(R.string.error_invalid_password));
-            mUsernameView.requestFocus();
+            mPasswordView.setError("Password is required");
+            mPasswordView.requestFocus();
             return;
         }
 
         if (password.length() < 6) {
-            mUsernameView.setError("Password should be atleast 6 characters.");
-            mUsernameView.requestFocus();
+            mPasswordView.setError("Password should be atleast 6 characters.");
+            mPasswordView.requestFocus();
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
 
 
         mAuth.signInWithEmailAndPassword(username, password)
+
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
 
