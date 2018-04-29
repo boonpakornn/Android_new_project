@@ -55,6 +55,8 @@ public class AdmissionCalculator extends AppCompatActivity {
                         || (social.getText().length() == 0)
                         || (social.getText().toString() == "")
                         || (eng.getText().length() == 0)
+                        || (eng.getText().toString() == "")
+                        || (math.getText().length() == 0)
                         || (math.getText().toString() == "")
                         || (science.getText().length() == 0)
                         || (science.getText().toString() == "")
@@ -77,7 +79,30 @@ public class AdmissionCalculator extends AppCompatActivity {
                             });
                     alertDialog.show();
 
-                } else {
+                } else if((new Double (gpax.getText().toString()) > 4)
+                        ||(new Double (thai.getText().toString()) > 100)
+                        ||(new Double (social.getText().toString()) > 100)
+                        ||(new Double (eng.getText().toString()) > 100)
+                        ||(new Double (math.getText().toString()) > 100)
+                        ||(new Double (science.getText().toString()) > 100)
+                        ||(new Double (gat.getText().toString()) > 300)
+                        ||(new Double (pat1.getText().toString()) > 300)
+                        ||(new Double (pat2.getText().toString()) > 300)){
+
+                    //AlertDialog to popup the error message
+                    AlertDialog alertDialog = new AlertDialog.Builder(AdmissionCalculator.this).create();
+                    alertDialog.setTitle("Error");
+                    alertDialog.setMessage("Some inputs are error");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+
+                    }
+                else {
                     //calculate the total score from user's input
                     double result = (new Double(gpax.getText().toString()) * 1500) + ((new Double(thai.getText().toString()) + new Double(social.getText().toString())
                             + new Double(eng.getText().toString()) + new Double(math.getText().toString()) + new Double(social.getText().toString())) * 18)

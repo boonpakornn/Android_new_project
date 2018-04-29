@@ -80,7 +80,10 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".UserProfile" />
         <activity android:name=".InformationActivity" />
+
         <activity android:name=".EditProfile"></activity>
+        <activity android:name=".aboutus"></activity>
+
     </application>
 
 </manifest>
