@@ -10,6 +10,9 @@ public class SettingActivity extends AppCompatActivity {
 
     TextView aboutus;
     TextView signOut;
+    TextView account;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +20,7 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         aboutus = findViewById(R.id.aboutus);
         signOut = findViewById(R.id.logout);
-
+        account = findViewById(R.id.account);
 
         aboutus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +35,20 @@ public class SettingActivity extends AppCompatActivity {
                 Intent i = new Intent(SettingActivity.this, LoginActivity.class);
                 // After logging out, we need to clear all activity recoard.
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                startActivity(i);
+
+            }
+        });
+
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(SettingActivity.this, EditProfile.class);
+                // After logging out, we need to clear all activity recoard.
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                 startActivity(i);
 
             }
